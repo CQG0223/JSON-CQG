@@ -1,0 +1,49 @@
+# JSON是什么
+
+​	JSON(JavaScript Object Notation)是一种用于数据交换的文本格式，拥有标准格式。
+
+​	虽然JSON源自于JavaScript语言，但是它是一种数据格式，可以用于任何编程语言。现在具有类似功能的格式有XML、YAML，当中以JSON的语法最为简单。
+
+​	例如，一个动态网页想从服务器获得数据时，服务器从数据库中查找数据，然后将数据转换为JSON文本格式：
+
+```json
+{
+    "title": "Design Patterns",
+    "subtitle": "Elements of Reusable Object-Oriented Software",
+    "author": [
+        "Erich Gamma",
+        "Richard Helm",
+        "Ralph Johnson",
+        "John Vlissides"
+    ],
+    "year": 2009,
+    "weight": 1.8,
+    "hardcover": true,
+    "publisher": {
+        "Company": "Pearson Education",
+        "Country": "India"
+    },
+    "website": null
+}
+```
+
+​	网页的脚本代码就可以将JSON文本解析为内部的数据结构去使用。
+
+​	从此例子中来看，JSON是树状结构(包含结果)，而JSON只包含6种数据类型：	
+
+```json
+null：表示为null
+bool：表示true或者false
+number：表示一般浮点数
+string：表示为“...”
+array：表示为[...]
+object：表示为{...}
+```
+
+​	我们要实现的JSON库，主要需要完成3个需求：
+
+​	1、把JSON文本解析为一个树状数据结构(parse)；
+
+​	2、提供接口访问该数据结构；
+
+​	3、把数据结构转换为JSON文本(stringify)
